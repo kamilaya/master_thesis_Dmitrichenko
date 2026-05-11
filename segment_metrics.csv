@@ -1,0 +1,51 @@
+Method,RMSE,MAE,NZ-MAPE (%),segment,n_rows,Δ RMSE vs Naïve (%)
+Naïve,10.5676,2.4174,83.39,Ladieswear,53428,0.0
+MA-4,12.6088,3.2697,104.13,Ladieswear,53428,19.3
+Seasonal MA,17.9998,6.5171,266.26,Ladieswear,53428,70.3
+Croston,21.3106,7.4853,171.86,Ladieswear,53428,101.7
+LightGBM (baseline),10.0051,2.2911,64.94,Ladieswear,53428,-5.3
+XGBoost (baseline),10.2051,2.3396,64.38,Ladieswear,53428,-3.4
+RandomForest (baseline),9.953,2.3047,71.9,Ladieswear,53428,-5.8
+LightGBM (macro),10.0457,2.2865,64.0,Ladieswear,53428,-4.9
+XGBoost (macro),10.3208,2.3708,64.4,Ladieswear,53428,-2.3
+RandomForest (macro),9.9571,2.3033,71.8,Ladieswear,53428,-5.8
+Naïve,4.9675,1.2002,88.56,Menswear,57152,0.0
+MA-4,5.4139,1.4162,112.66,Menswear,57152,9.0
+Seasonal MA,6.242,2.0729,107.94,Menswear,57152,25.7
+Croston,7.7367,2.7443,110.83,Menswear,57152,55.7
+LightGBM (baseline),4.6513,1.043,70.45,Menswear,57152,-6.4
+XGBoost (baseline),4.6971,1.0643,70.95,Menswear,57152,-5.4
+RandomForest (baseline),4.7442,1.0884,76.54,Menswear,57152,-4.5
+LightGBM (macro),4.662,1.0358,69.39,Menswear,57152,-6.1
+XGBoost (macro),4.767,1.0731,70.78,Menswear,57152,-4.0
+RandomForest (macro),4.7319,1.0839,76.36,Menswear,57152,-4.7
+Naïve,11.3683,2.7264,92.4,Divided,41040,0.0
+MA-4,13.012,3.5943,127.18,Divided,41040,14.5
+Seasonal MA,16.9827,6.2328,199.84,Divided,41040,49.4
+Croston,19.9876,7.3823,151.36,Divided,41040,75.8
+LightGBM (baseline),10.4332,2.5086,75.15,Divided,41040,-8.2
+XGBoost (baseline),10.6051,2.5304,72.29,Divided,41040,-6.7
+RandomForest (baseline),10.4026,2.5379,82.41,Divided,41040,-8.5
+LightGBM (macro),10.5293,2.5092,72.7,Divided,41040,-7.4
+XGBoost (macro),10.8028,2.5828,72.72,Divided,41040,-5.0
+RandomForest (macro),10.4419,2.5421,82.38,Divided,41040,-8.1
+Naïve,0.811,0.1898,85.61,Baby/Children,128326,0.0
+MA-4,0.7529,0.1965,74.51,Baby/Children,128326,-7.2
+Seasonal MA,1.1874,0.3772,74.84,Baby/Children,128326,46.4
+Croston,1.2785,0.6026,94.17,Baby/Children,128326,57.6
+LightGBM (baseline),0.5655,0.1286,66.55,Baby/Children,128326,-30.3
+XGBoost (baseline),0.5794,0.1314,66.51,Baby/Children,128326,-28.6
+RandomForest (baseline),0.5888,0.1402,72.41,Baby/Children,128326,-27.4
+LightGBM (macro),0.5616,0.1265,66.18,Baby/Children,128326,-30.8
+XGBoost (macro),0.5755,0.1364,66.93,Baby/Children,128326,-29.0
+RandomForest (macro),0.5866,0.1385,72.23,Baby/Children,128326,-27.7
+Naïve,5.2796,1.0184,81.67,Sport,19228,0.0
+MA-4,7.3079,1.4208,100.39,Sport,19228,38.4
+Seasonal MA,11.5061,3.071,210.2,Sport,19228,117.9
+Croston,13.7416,3.6152,164.17,Sport,19228,160.3
+LightGBM (baseline),5.442,0.9723,61.7,Sport,19228,3.1
+XGBoost (baseline),5.47,0.9839,62.12,Sport,19228,3.6
+RandomForest (baseline),5.3937,0.9852,71.0,Sport,19228,2.2
+LightGBM (macro),5.4471,0.966,59.97,Sport,19228,3.2
+XGBoost (macro),5.6009,1.0201,63.22,Sport,19228,6.1
+RandomForest (macro),5.398,0.9873,70.59,Sport,19228,2.2

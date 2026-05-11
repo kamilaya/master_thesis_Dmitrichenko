@@ -1,0 +1,139 @@
+======================================================================
+STEP 1 — Load & Inspect
+======================================================================
+  Shape:         (151985, 24)
+  Date range:    2018-09-17  →  2020-09-21
+  Unique articles: 7,873
+  Unique weeks:    106
+
+  Column types:
+article_id                              int64
+week_start                     datetime64[us]
+weekly_sales_volume                     int64
+avg_weekly_price                      float64
+year_month                                str
+product_type_name                         str
+product_group_name                        str
+graphical_appearance_name                 str
+colour_group_name                         str
+perceived_colour_value_name               str
+index_group_name                          str
+eurozone_hicp                         float64
+eurozone_unemployment_rate            float64
+eurozone_cci                          float64
+week_of_year                            int64
+month                                   int64
+quarter                                 int64
+year                                    int64
+is_summer                               int64
+product_age_weeks                       int64
+sales_lag1                            float64
+sales_lag2                            float64
+sales_rolling4                        float64
+real_price                            float64
+
+  Null counts:
+article_id                         0
+week_start                         0
+weekly_sales_volume                0
+avg_weekly_price                   0
+year_month                         0
+product_type_name                  0
+product_group_name                 0
+graphical_appearance_name          0
+colour_group_name                  0
+perceived_colour_value_name        0
+index_group_name                   0
+eurozone_hicp                      0
+eurozone_unemployment_rate         0
+eurozone_cci                       0
+week_of_year                       0
+month                              0
+quarter                            0
+year                               0
+is_summer                          0
+product_age_weeks                  0
+sales_lag1                      7873
+sales_lag2                     15279
+sales_rolling4                  7873
+real_price                         0
+
+  Sales volume distribution:
+count    151985.000000
+mean         14.499786
+std          34.520429
+min           1.000000
+25%           1.000000
+50%           4.000000
+75%          12.000000
+max        1357.000000
+
+  index_group breakdown:
+index_group_name
+Ladieswear       40850
+Baby/Children    38841
+Menswear         33818
+Divided          28830
+Sport             9646
+
+======================================================================
+STEP 2 — Clean
+======================================================================
+  After dedup:          151,985 rows  (removed 0)
+  After dropping rows with missing macro: 151,985 (removed 0)
+  After dropping rows with missing attributes: 151,985 (removed 0)
+
+  Sales volume 99th percentile: 164 units/week
+  Rows above 99th pct: 1,516  (1.00%)
+  → Capped (not dropped) at 164 to preserve time-series integrity
+
+======================================================================
+STEP 3 — Zero-Week Imputation
+======================================================================
+  Building full grid: 7,873 articles × 106 weeks = 834,538 rows
+  Full grid shape after imputation: (834538, 24)
+  Zero-sale weeks: 81.8%  (intermittent demand — expected in fashion)
+
+======================================================================
+STEP 4 — Feature Engineering
+======================================================================
+  covid dummy: 236,190 rows flagged as COVID period (28.3% of full grid)
+  Features created. Current columns (34):
+  ['article_id', 'week_start', 'weekly_sales_volume', 'avg_weekly_price', 'year_month', 'product_type_name', 'product_group_name', 'graphical_appearance_name', 'colour_group_name', 'perceived_colour_value_name', 'index_group_name', 'week_of_year', 'month', 'quarter', 'year', 'is_summer', 'product_age_weeks', 'sales_lag1', 'sales_lag2', 'sales_rolling4', 'real_price', 'eurozone_hicp', 'eurozone_unemployment_rate', 'eurozone_cci', 'is_spring_summer', 'is_sale_season', 'covid', 'sales_lag4', 'sales_rolling4_mean', 'sales_rolling4_std', 'price_vs_median', 'hicp_lag1m', 'unemployment_lag1m', 'cci_lag1m']
+
+======================================================================
+STEP 5 — Categorical Encoding
+======================================================================
+  graphical_appearance_name: 27 unique values → one-hot encoded
+  colour_group_name: 46 unique values → one-hot encoded
+  perceived_colour_value_name: 8 unique values → one-hot encoded
+  index_group_name: 5 unique values → one-hot encoded
+  Shape after encoding: (834538, 112)
+
+======================================================================
+STEP 6 — Log-Transform Target
+======================================================================
+  Original sales:     mean=2.47, std=12.36, skew=8.75
+  Log-transformed:    mean=0.34, std=0.87, skew=2.98
+
+======================================================================
+STEP 7 — Time-Based Train / Val / Test Split
+======================================================================
+  Train: 2018-09-17 → 2019-04-29  |  259,809 rows
+  Val:   2019-05-06   → 2019-12-30    |  275,555 rows
+  Test:  2020-01-06  → 2020-09-21   |  299,174 rows
+  Split ratios: 31% / 33% / 36%
+
+======================================================================
+STEP 8 — Standardise Continuous Features (fit on train only)
+======================================================================
+  Scaled 15 continuous columns.
+  Scaler fitted on train only — no leakage into val/test.
+
+======================================================================
+STEP 9 — Save Outputs
+======================================================================
+  Saved: tshirts_preprocessed.csv  (full dataset, unscaled)
+  Saved: tshirts_train.csv
+  Saved: tshirts_val.csv
+  Saved: tshirts_test.csv

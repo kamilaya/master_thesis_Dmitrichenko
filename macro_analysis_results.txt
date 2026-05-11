@@ -1,0 +1,55 @@
+=================================================================
+MACROECONOMIC INFLUENCE ANALYSIS
+=================================================================
+
+  Monthly observations: 25
+
+──────────────────────────────────────────────────
+A. Pearson Correlations — Macro Indicators vs. Monthly Sales
+──────────────────────────────────────────────────
+  HICP Inflation (%)              r = +0.269   p = 0.1939  n.s.
+  Unemployment Rate (%)           r = -0.054   p = 0.7995  n.s.
+  Consumer Confidence Index       r = -0.100   p = 0.6360  n.s.
+
+  Significance: *** p<0.001  ** p<0.01  * p<0.05  n.s. not significant
+
+──────────────────────────────────────────────────
+C. Granger Causality Tests (macro → sales, lags 1–4 months)
+──────────────────────────────────────────────────
+
+  Stationarity checks (required for Granger test):
+  ADF stationarity — total_sales: stat=-3.125  p=0.0247  STATIONARY
+  ADF stationarity — HICP Inflation (%): stat=-3.687  p=0.0043  STATIONARY
+  ADF stationarity — Unemployment Rate (%): stat=-1.498  p=0.5345  NON-STATIONARY (consider differencing)
+  ADF stationarity — Consumer Confidence Index: stat=2.164  p=0.9989  NON-STATIONARY (consider differencing)
+
+  Note: non-stationary series (Unemployment, CCI) are first-differenced before Granger testing.
+  Statistical power caveat: with n=24 observations after differencing and up to 4 lags, power is
+  limited — results are indicative rather than conclusive.
+
+  Granger causality results (H0: macro does NOT cause sales):
+
+  HICP Inflation (%):
+    Lag 1: F=0.486  p=0.4937  n.s.
+    Lag 2: F=0.178  p=0.8384  n.s.
+    Lag 3: F=0.419  p=0.7419  n.s.
+    Lag 4: F=0.640  p=0.6451  n.s.
+
+  Unemployment Rate (%):
+    Lag 1: F=0.030  p=0.8653  n.s.
+    Lag 2: F=0.216  p=0.8083  n.s.
+    Lag 3: F=0.365  p=0.7790  n.s.
+    Lag 4: F=0.200  p=0.9329  n.s.
+
+  Consumer Confidence Index:
+    Lag 1: F=0.271  p=0.6084  n.s.
+    Lag 2: F=0.113  p=0.8935  n.s.
+    Lag 3: F=0.112  p=0.9516  n.s.
+    Lag 4: F=0.092  p=0.9830  n.s.
+
+──────────────────────────────────────────────────
+D. Cross-Correlation — Macro leads Sales by N months
+──────────────────────────────────────────────────
+  HICP Inflation (%): strongest correlation at lag 2 months  (r = 0.389)
+  Unemployment Rate (%): strongest correlation at lag 4 months  (r = 0.276)
+  Consumer Confidence Index: strongest correlation at lag -1 months  (r = -0.175)

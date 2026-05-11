@@ -1,0 +1,11 @@
+,Method,Type,RMSE,MAE,NZ-MAPE (%),Δ RMSE vs best baseline,Δ MAE vs best baseline
+1,RandomForest (baseline),ML model,6.2333,1.0911,75.28,-6.5%,-7.7%
+2,RandomForest (macro),ML model,6.2418,1.09,75.14,-6.4%,-7.8%
+3,LightGBM (baseline),ML model,6.2436,1.0702,68.55,-6.4%,-9.5%
+4,LightGBM (macro),ML model,6.2789,1.0668,67.33,-5.8%,-9.7%
+5,XGBoost (baseline),ML model,6.3489,1.0879,67.91,-4.8%,-8.0%
+6,XGBoost (macro),ML model,6.4445,1.1068,68.13,-3.3%,-6.4%
+7,Naïve (last week),Non-ML baseline,6.6678,1.1819,86.89,0.0%,0.0%
+8,MA-4 (rolling 4w),Non-ML baseline,7.8034,1.5231,104.44,+17.0%,+28.9%
+9,Seasonal MA (MA-4 + SWLY),Non-ML baseline,10.6762,2.774,170.67,+60.1%,+134.7%
+10,Croston's method,Non-ML baseline,12.6561,3.3645,136.15,+89.8%,+184.7%

@@ -1,0 +1,21 @@
+model,split,RMSE,MAE,NZ-MAPE (%)
+Naïve (last week),val,5.6068,1.1274,80.08
+Naïve (last week),test,6.6678,1.1819,86.89
+MA-4 (rolling 4w),val,6.5538,1.375,90.24
+MA-4 (rolling 4w),test,7.8034,1.5231,104.44
+Seasonal MA (MA-4 + SWLY),val,8.0645,2.0613,113.88
+Seasonal MA (MA-4 + SWLY),test,10.6762,2.774,170.67
+Croston's method,val,12.0238,3.2299,155.97
+Croston's method,test,12.6561,3.3645,136.15
+LightGBM (baseline),val,5.2051,0.9669,59.69
+LightGBM (baseline),test,6.2436,1.0702,68.55
+XGBoost (baseline),val,5.2765,0.9757,59.08
+XGBoost (baseline),test,6.3489,1.0879,67.91
+RandomForest (baseline),val,5.216,0.9941,67.16
+RandomForest (baseline),test,6.2333,1.0911,75.28
+LightGBM (macro),val,5.2255,0.9549,57.77
+LightGBM (macro),test,6.2789,1.0668,67.33
+XGBoost (macro),val,5.3153,0.9762,58.3
+XGBoost (macro),test,6.4445,1.1068,68.13
+RandomForest (macro),val,5.2179,0.9829,66.93
+RandomForest (macro),test,6.2418,1.09,75.14

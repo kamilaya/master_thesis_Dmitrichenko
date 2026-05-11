@@ -1,0 +1,13 @@
+feature_set,model,split,RMSE,MAE,NZ-MAPE (%)
+Baseline (no macro),LightGBM,val,5.2051,0.9669,59.69
+Baseline (no macro),LightGBM,test,6.2436,1.0702,68.55
+Baseline (no macro),XGBoost,val,5.2765,0.9757,59.08
+Baseline (no macro),XGBoost,test,6.3489,1.0879,67.91
+Baseline (no macro),RandomForest,val,5.216,0.9941,67.16
+Baseline (no macro),RandomForest,test,6.2333,1.0911,75.28
+Macro-enriched,LightGBM,val,5.2255,0.9549,57.77
+Macro-enriched,LightGBM,test,6.2789,1.0668,67.33
+Macro-enriched,XGBoost,val,5.3153,0.9762,58.3
+Macro-enriched,XGBoost,test,6.4445,1.1068,68.13
+Macro-enriched,RandomForest,val,5.2179,0.9829,66.93
+Macro-enriched,RandomForest,test,6.2418,1.09,75.14

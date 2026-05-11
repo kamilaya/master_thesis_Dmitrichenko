@@ -1,0 +1,15 @@
+# игнорировать все большие датасеты
+tshirts_train.csv
+transactions_train.csv
+tshirts_binary_test.csv
+tshirts_binary_train.csv
+tshirts_preprocessed.csv
+tshirts_val.csv
+tshirts_spread_train.csv
+tshirts_spread_test.csv
+tshirts_spread_val.csv
+tshirts_spread.csv
+customers.csv
+tshirts_binary.csv
+tshirts_binary_val.csv
+tshirts_test.csv

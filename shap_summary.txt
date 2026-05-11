@@ -1,0 +1,9 @@
+SHAP ANALYSIS SUMMARY
+Macro share of total SHAP impact: 2.2%
+Non-macro share: 97.8%
+Top features:
+  Sales Lag 1 week: 0.2486
+  Price vs. Article Median: 0.1998
+  Rolling 4-week Mean: 0.1118
+  Product Age (weeks): 0.0275
+  Rolling 4-week Std Dev: 0.0166
